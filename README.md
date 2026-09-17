@@ -1,54 +1,66 @@
-# Tenaye (ጤናዬ) | AI Health & Emergency Assistant
 
-> **"Understand the problem. Assess the risk. Locate the person. Connect the right help."**
 
-Tenaye (ጤናዬ - *My Health*) is a multilingual, location-aware AI platform designed to bridge the critical gap between knowing and acting during health events and emergencies. The platform transforms unstructured voice or text reports into understandable guidance, risk-aware escalation pathways, nearby care discovery, and authorized emergency response dispatches.
+# Tenaye (ጤናዬ) - Multilingual AI Health & Emergency Assistant
+
+**Tagline:** Bridging the gap between a health crisis and immediate care with Voxide-powered voice intelligence, real-time hospital routing, and rapid emergency triage.
+
+📋 **1. Project Overview**
+
+Tenaye (ጤናዬ) is a bilingual (Amharic and English) health and emergency web application developed for the Stark Official Hackathon. Designed to eliminate critical delays during medical emergencies, Tenaye integrates voice-first symptom reporting via the Voxide processing engine, rapid emergency dialing, hospital geolocation, a comprehensive medical reference library, a globally persistent AI assistant widget accessible across all pages with a full-screen display mode, and an integrated **Scholarship/ScholarXiv search feature** directly accessible via the search bar for instant verified research.
+
+🎯 **2. Problem Statement**
+
+During medical emergencies or health crises in regions like Ethiopia:
+
+* **Language & Literacy Barriers:** Complex medical terms and language gaps prevent users from quickly understanding symptoms or accessing instructions.
+* **Panic & Information Overload:** During acute trauma or sudden illness, searching through lengthy text manuals causes fatal delays.
+* **Hospital Location Friction:** Finding the nearest operational hospital or ambulance service often requires frantic, unorganized searching.
+* **Connectivity & Real-Time Constraints:** Accessing accurate, structured health information swiftly under pressure is vital for saving lives.
+
+💡 **3. Core Features & Architecture**
+
+* **Navigation & Global AI Assistant**
+* *Clean Multi-Page Navbar:* Structured navigation including Home, Emergency, Diseases, First Aid Help, Health Tips, About, and Contact.
+* *Global Floating AI Chatbot Widget:* Available on every page via a persistent chat icon. Users can toggle a popup or expand it to full-screen mode for deep symptom analysis, hospital searching, and triage.
+
+
+* **Integrated ScholarXiv Search Bar (New Feature)**
+* *Direct Search Bar Integration:* Seamlessly queries the ScholarXiv API directly from the frontend interface.
+* *Verified Research Bridge:* Instantly connects general symptom and medical queries to verified scholarly literature and research papers without requiring a complex backend setup.
+
+
+* **Detailed Page Breakdown:**
+* *Home / Landing Page:* Primary landing dashboard featuring high-impact hero sections and quick-access pathways.
+* *Emergency and Ambulance Hub:* Geolocation-based hospital locator paired with an emergency quick-dial dashboard.
+* *Disease Library Page:* Comprehensive repository detailing medical causes, symptoms, risk factors, and treatments.
+* *First Aid Help Page:* Visual, step-by-step emergency care instructions.
+* *Health Tip Page:* Daily wellness guidance, nutritional insights, and preventative care practices.
+* *About Page:* Project mission, problem statement, and team overview.
+* *Contact Page:* Support channels and feedback mechanisms.
+
+
+* **Smart AI & Voice Engine (Chatbot)**
+* *Voxide Voice and Text Intake:* Bilingual speech-to-text and voice command processing powered by Voxide, supplemented by traditional text input supporting both Amharic and English languages.
+* *Multi-Purpose AI Chatbot:* Functions as an emergency hospital locator, symptom assessor, and first-aid assistant utilizing hybrid knowledge routing:
+* *Local Database Match:* Instantly pulls structured summaries for known conditions and links directly to the Disease Library.
+* *Gemini API Fallback:* Dynamically generates structured medical insights for less common queries.
+
+
+* *Interactive First-Aid Hub:* Step-by-step visual instructional guides designed for acute accidents and high-stress medical situations.
+
+
+
+🛠 **4. Technical Stack**
+
+* **Techs:** React, TypeScript, Tailwind CSS
+* **Search & Research Integration:** ScholarXiv API (Frontend fetch integration via search bar)
+* **Voice Processing Engine:** Voxide (Amharic and English Speech-to-Text and Text-to-Speech)
+* **Artificial Intelligence:** Gemini API and Local Medical Knowledge Base
+
+👥 **5. Team Information**
+
+* **Project Name:** Tenaye (ጤናዬ)
+* **Team Members:** Yonatan Muluken, Nahom Tibebu, Dagmawi Shigute, and Ayub Ebrahim
+* **Target Competition:** Stark Official Hackathon
 
 ---
-
-## 🚀 Key Features
-
-* **Amharic & English Voice Engine:** Native voice-first reporting with speech-to-text processing for local languages and typed fallbacks.
-* **Risk-Aware AI Orchestration:** Combines LLM conversational capability with deterministic safety rules to extract structured details, ask focused follow-ups, and flag emergency warning signals.
-* **Permission-Based Location Intelligence:** Utilizes the browser's Geolocation API and OpenStreetMap's Overpass API via Leaflet.js to dynamically locate and display nearby hospitals, complete with names, phone numbers, and coordinates on an interactive map.
-* **Structured Emergency Handoff:** Assembles the user's name, contact info, situation summary, exact GPS coordinates, and urgency status into a unified report to eliminate repeated explanations across emergency channels.
-* **Curated First-Aid Hub:** Visual, step-by-step first-aid guides for scenarios like burns, fractures, and stroke warning signs.
-* **Health Tip Page:** Dedicated section providing daily, actionable wellness advice and preventative care guidance for users.
-* **Disease Library Page:** Comprehensive reference repository detailing common illnesses, symptoms, prevention methods, and vital health information.
-* **Community Health Analytics:** Aggregates anonymized trends to support public health monitoring, time-series alerts, and regional disaster relief visualization.
-
----
-
-## 🛠️ System Architecture & Tech Layer
-
-| Layer | Technology | Key Functionality |
-| --- | --- | --- |
-| **tech** | React.js, Tailwind CSS, TypeScript | Responsive user interfaces, chat streams, microphone capture, GPS permission triggers, and map views |
-| **AI / Speech** | Speech-to-Text API + LLM Service | Multilingual transcription (Amharic/English), structured JSON extraction, safety rule checks |
-| **Communication** | SMS / Voice Provider APIs | User-authorized SMS/Call dispatch with delivery status tracking |
-
----
-
-## ⚡ Emergency Execution Flow
-
-1. **Voice/Text Report** – Capture natural speech or text in Amharic or English.
-2. **Identify User** – Collect contact details and primary identity information.
-3. **Assess Risk & Flags** – Evaluate symptoms against deterministic safety rules and urgency criteria.
-4. **Request GPS & Locate Care** – Retrieve location with user consent and surface nearby hospitals.
-5. **Package Report** – Assemble situation summary, coordinates, and urgency status into a unified report.
-6. **Authorize Call/SMS** – Dispatch the compiled report through verified communication channels.
-
----
-
-## 🛡️ Responsible AI & Safety Boundaries
-
-* **No Automated Unverified Dispatch:** The platform never claims to have dispatched emergency services automatically or provided a definitive medical diagnosis.
-* **Explicit Consent First:** Geolocation access and emergency report dispatches require clear, explicit user permission.
-* **Data Minimization & Auditing:** Collects strictly necessary data for care routing while logging consent and critical system events for verification.
-
----
-
-## 👥 Team D.205
-
-* **Team Members:** Yonathan Muluken, Nahom Tibebu, Dagmawi Shigute, Ayub Ebrahim
-* **Mission:** Building responsible, multilingual, location-aware health technology for communities.
