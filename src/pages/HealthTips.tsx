@@ -71,34 +71,34 @@ const GENERAL_TIPS: Tip[] = [
 function TipCard({ tip, category }: { tip: Tip; category: string }) {
   const Icon = tip.icon;
   return (
-    <div className="bg-red-50 border border-red-100 rounded-xl overflow-hidden hover:shadow-md transition-shadow">
+    <div className="bg-[#f0fafa] border border-[#cceef0] rounded-xl overflow-hidden hover:shadow-md transition-shadow">
       <div className="p-5">
         <div className="flex items-center gap-2 mb-3">
-          <Icon size={16} className="text-red-600" />
-          <span className="text-xs font-semibold text-red-600 bg-red-100 px-2 py-0.5 rounded-full">{category}</span>
+          <Icon size={16} className="text-[#119197]" />
+          <span className="text-xs font-semibold text-[#119197] bg-[#e6f7f7] px-2 py-0.5 rounded-full">{category}</span>
         </div>
-        <h3 className="font-display font-bold text-red-700 text-base mb-2">{tip.title}</h3>
+        <h3 className="font-display font-bold text-[#0c6e73] text-base mb-2">{tip.title}</h3>
         <p className="text-sm text-gray-600 leading-relaxed mb-4">{tip.desc}</p>
 
         <div className="mb-4">
-          <p className="font-display font-semibold text-red-700 text-xs mb-2">Action Steps:</p>
+          <p className="font-display font-semibold text-[#0c6e73] text-xs mb-2">Action Steps:</p>
           <ul className="space-y-1.5">
             {tip.actions.map(a => (
               <li key={a} className="flex items-start gap-2 text-xs text-gray-600">
-                <span className="w-1.5 h-1.5 rounded-full bg-red-500 shrink-0 mt-1.5" />{a}
+                <span className="w-1.5 h-1.5 rounded-full bg-[#f0fafa]0 shrink-0 mt-1.5" />{a}
               </li>
             ))}
           </ul>
         </div>
 
-        <div className="bg-white border border-red-100 rounded-lg p-3">
-          <p className="font-display font-semibold text-red-700 text-xs mb-1.5">Scientific Evidence:</p>
+        <div className="bg-white border border-[#cceef0] rounded-lg p-3">
+          <p className="font-display font-semibold text-[#0c6e73] text-xs mb-1.5">Scientific Evidence:</p>
           <div className="flex items-start justify-between gap-2">
             <div>
               <p className="text-[10px] text-gray-600"><span className="font-medium text-gray-700">Source:</span> {tip.evidence.source}</p>
               <p className="text-[10px] text-gray-500">Published: {tip.evidence.year}</p>
             </div>
-            <button className="flex items-center gap-1 px-2 py-1 rounded-lg border border-gray-200 bg-white text-[10px] text-gray-600 hover:border-red-300 hover:text-red-600 transition-colors shrink-0 whitespace-nowrap">
+            <button className="flex items-center gap-1 px-2 py-1 rounded-lg border border-gray-200 bg-white text-[10px] text-gray-600 hover:border-[#119197] hover:text-[#119197] transition-colors shrink-0 whitespace-nowrap">
               ↗ View Source
             </button>
           </div>
@@ -119,14 +119,14 @@ export function HealthTips() {
   return (
     <main className="pt-16 min-h-screen bg-gray-50">
       {/* Red hero banner */}
-      <div className="bg-gradient-to-br from-red-600 to-rose-700 text-white">
+      <div className="bg-gradient-to-br from-[#0c6e73] to-[#119197] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-14 text-center">
           <div className="inline-flex w-12 h-12 rounded-xl bg-white/20 items-center justify-center mx-auto mb-4">
             <IconBook size={24} className="text-white" />
           </div>
           <h1 className="font-display font-extrabold text-4xl text-white mb-2">Health Tips &amp; Wellness Guide</h1>
-          <p className="text-red-100 text-sm mb-8 max-w-lg mx-auto">
-            20 comprehensive categories with 80 evidence-based health tips, backed by scientific research and medical expertise
+          <p className="text-teal-100 text-sm mb-8 max-w-lg mx-auto">
+            {GENERAL_TIPS.length} evidence-based health tips in General Health — expert reviewed and backed by scientific research and medical expertise
           </p>
 
           {/* Search + Language */}
@@ -162,10 +162,10 @@ export function HealthTips() {
                     <button
                       key={l}
                       onClick={() => { setLang(l); setLangOpen(false); }}
-                      className={`w-full flex items-center justify-between px-4 py-2.5 text-sm hover:bg-gray-50 transition-colors ${lang === l ? 'text-red-600 font-semibold' : 'text-gray-700'}`}
+                      className={`w-full flex items-center justify-between px-4 py-2.5 text-sm hover:bg-gray-50 transition-colors ${lang === l ? 'text-[#119197] font-semibold' : 'text-gray-700'}`}
                     >
                       {l}
-                      {lang === l && <span className="text-red-600 text-xs">✓</span>}
+                      {lang === l && <span className="text-[#119197] text-xs">✓</span>}
                     </button>
                   ))}
                 </div>
@@ -179,11 +179,11 @@ export function HealthTips() {
         {/* General Health section */}
         <div ref={ref1} className="mb-10">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center">
-              <IconTarget size={18} className="text-red-600" />
+            <div className="w-9 h-9 rounded-xl bg-[#e6f7f7] flex items-center justify-center">
+              <IconTarget size={18} className="text-[#119197]" />
             </div>
             <div>
-              <h2 className="font-display font-extrabold text-xl text-red-600">General Health</h2>
+              <h2 className="font-display font-extrabold text-xl text-[#119197]">General Health</h2>
               <p className="text-xs text-gray-500">Fundamental health practices for overall wellness and disease prevention</p>
             </div>
           </div>
@@ -195,18 +195,18 @@ export function HealthTips() {
         </div>
 
         {/* References */}
-        <div ref={ref2} className="bg-red-50 border border-red-100 rounded-xl p-6 mb-8">
+        <div ref={ref2} className="bg-[#f0fafa] border border-[#cceef0] rounded-xl p-6 mb-8">
           <div className="flex items-center gap-2 mb-1">
-            <IconBook size={15} className="text-red-600" />
-            <h3 className="font-display font-bold text-red-700 text-sm">References & Evidence</h3>
+            <IconBook size={15} className="text-[#119197]" />
+            <h3 className="font-display font-bold text-[#0c6e73] text-sm">References & Evidence</h3>
           </div>
-          <p className="text-xs text-gray-500 mb-5">All 80 health tips across 20 categories are based on peer-reviewed research and medical guidelines from trusted sources</p>
+          <p className="text-xs text-gray-500 mb-5">All {GENERAL_TIPS.length} health tips in General Health are based on peer-reviewed research and medical guidelines from trusted sources</p>
           <div className="grid sm:grid-cols-2 gap-6 mb-4">
             <div>
               <p className="font-display font-semibold text-gray-700 text-xs mb-2">Medical Sources:</p>
               <ul className="space-y-1">
                 {['CDC, WHO, FDA, EPA, FEMA', 'American Heart Association', 'American Academy of Pediatrics', 'National Sleep Foundation', 'Mayo Clinic & Red Cross'].map(s => (
-                  <li key={s} className="text-xs text-gray-500 flex gap-2"><span className="text-red-400 shrink-0">•</span>{s}</li>
+                  <li key={s} className="text-xs text-gray-500 flex gap-2"><span className="text-[#119197] shrink-0">•</span>{s}</li>
                 ))}
               </ul>
             </div>
@@ -214,7 +214,7 @@ export function HealthTips() {
               <p className="font-display font-semibold text-gray-700 text-xs mb-2">Research Journals:</p>
               <ul className="space-y-1">
                 {['JAMA Internal Medicine', 'American Journal of Clinical Nutrition', 'Sports Medicine & Neurology', 'Environmental Health Perspectives', 'Circulation & The Lancet'].map(s => (
-                  <li key={s} className="text-xs text-gray-500 flex gap-2"><span className="text-red-400 shrink-0">•</span>{s}</li>
+                  <li key={s} className="text-xs text-gray-500 flex gap-2"><span className="text-[#119197] shrink-0">•</span>{s}</li>
                 ))}
               </ul>
             </div>
@@ -227,12 +227,15 @@ export function HealthTips() {
         </div>
 
         {/* CTA */}
-        <div ref={ref3} className="rounded-2xl bg-gradient-to-r from-red-600 to-rose-600 text-white p-10 text-center">
+        <div ref={ref3} className="rounded-2xl bg-gradient-to-r from-[#0c6e73] to-[#119197] text-white p-10 text-center">
           <h3 className="font-display font-extrabold text-2xl mb-2">Need Personalized Health Advice?</h3>
-          <p className="text-red-100 text-sm mb-6">Connect with our healthcare professionals for personalized guidance and support</p>
+          <p className="text-teal-100 text-sm mb-6">Connect with our healthcare professionals for personalized guidance and support</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <button className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-red-600 font-bold text-sm hover:bg-red-50 transition-colors">
-              <IconHeart size={16} /> Consult a Doctor
+            <button
+              onClick={() => window.dispatchEvent(new CustomEvent('open-ai-assistant'))}
+              className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-[#119197] font-bold text-sm hover:bg-[#e6f7f7] transition-colors"
+            >
+              <IconHeart size={16} /> Ask AI Assistant
             </button>
             <Link to="/diseases" className="flex items-center gap-2 px-5 py-2.5 rounded-xl border-2 border-white text-white font-bold text-sm hover:bg-white/10 transition-colors">
               <IconBook size={16} /> Browse Disease Library

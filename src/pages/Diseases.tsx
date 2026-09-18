@@ -36,18 +36,18 @@ export function Diseases() {
   return (
     <main className="pt-16 min-h-screen bg-gray-50">
       {/* Red hero banner */}
-      <div className="bg-gradient-to-br from-red-600 to-rose-700 text-white">
+      <div className="bg-gradient-to-br from-[#0c6e73] to-[#119197] text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 text-center">
           <div className="inline-flex w-12 h-12 rounded-xl bg-white/20 items-center justify-center mx-auto mb-4">
             <IconBook size={24} className="text-white" />
           </div>
           <h1 className="font-display font-extrabold text-4xl text-white mb-2">Disease Library</h1>
-          <p className="text-red-100 text-sm mb-1">Comprehensive information about {DISEASES.length} diseases — expert verified</p>
+          <p className="text-teal-100 text-sm mb-1">Comprehensive information about {DISEASES.length} diseases — expert verified</p>
           <div className="flex items-center justify-center gap-4 mb-0">
-            <span className="flex items-center gap-1.5 text-xs text-red-200">
+            <span className="flex items-center gap-1.5 text-xs text-teal-200">
               <span className="w-1.5 h-1.5 rounded-full bg-white" />{DISEASES.length} Diseases
             </span>
-            <span className="flex items-center gap-1.5 text-xs text-red-200">
+            <span className="flex items-center gap-1.5 text-xs text-teal-200">
               <span className="w-1.5 h-1.5 rounded-full bg-green-300" />Expert Verified
             </span>
           </div>
@@ -72,13 +72,13 @@ export function Diseases() {
           <aside className="hidden lg:flex flex-col gap-4 w-52 shrink-0">
             {/* Emergency widget */}
             <div className="bg-red-50 border border-red-200 rounded-xl p-4">
-              <div className="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center text-white mb-3">
+              <div className="w-8 h-8 rounded-lg bg-[#dc2626] flex items-center justify-center text-white mb-3">
                 <IconAlertTriangle size={16} />
               </div>
-              <p className="font-display font-bold text-red-700 text-xs mb-1">Medical Emergency?</p>
+              <p className="font-display font-bold text-[#dc2626] text-xs mb-1">Medical Emergency?</p>
               <p className="text-red-500 text-[10px] mb-3">For immediate medical assistance</p>
-              <a href="tel:907" className="block w-full py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold text-center transition-colors">Emergency Help</a>
-              <div className="mt-3 space-y-1.5 text-[10px] text-red-600">
+              <a href="tel:907" className="block w-full py-2 rounded-lg bg-[#dc2626] hover:bg-[#b91c1c] text-white text-xs font-bold text-center transition-colors">Emergency Help</a>
+              <div className="mt-3 space-y-1.5 text-[10px] text-[#dc2626]">
                 <p className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-green-500" /> Available 24/7</p>
                 <p className="flex items-center gap-1"><span className="w-1.5 h-1.5 rounded-full bg-green-500" /> Fast Response</p>
               </div>
@@ -90,7 +90,7 @@ export function Diseases() {
               {[['Total Diseases', String(DISEASES.length)], ['Common Conditions', '8'], ['Categories', '8']].map(([l, v]) => (
                 <div key={l} className="flex items-center justify-between py-1.5 border-b border-gray-50 last:border-0">
                   <span className="text-xs text-gray-500">{l}</span>
-                  <span className="font-display font-bold text-red-600 text-xs">{v}</span>
+                  <span className="font-display font-bold text-[#119197] text-xs">{v}</span>
                 </div>
               ))}
             </div>
@@ -108,7 +108,7 @@ export function Diseases() {
                     onClick={() => setCategory(c)}
                     className={`text-left text-xs px-2.5 py-1.5 rounded-lg transition-colors ${
                       category === c
-                        ? 'bg-red-50 text-red-600 font-semibold'
+                        ? 'bg-[#e6f7f7] text-[#119197] font-semibold'
                         : 'text-gray-500 hover:bg-gray-50 hover:text-gray-900'
                     }`}
                   >
@@ -126,7 +126,7 @@ export function Diseases() {
             </p>
 
             {/* Mobile category */}
-            <select value={category} onChange={e => setCategory(e.target.value)} className="lg:hidden w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-gray-700 mb-4 outline-none focus:border-red-400">
+            <select value={category} onChange={e => setCategory(e.target.value)} className="lg:hidden w-full border border-gray-200 rounded-xl px-3 py-2.5 text-sm text-gray-700 mb-4 outline-none focus:border-[#119197]">
               {CATEGORIES.map(c => <option key={c}>{c}</option>)}
             </select>
 
@@ -149,7 +149,7 @@ export function Diseases() {
                       ))}
                     </div>
                   </div>
-                  <Link to={`/diseases/${d.id}`} className="flex items-center gap-1 text-xs font-semibold text-red-600 hover:text-red-700 group-hover:gap-2 transition-all">
+                  <Link to={`/diseases/${d.id}`} className="flex items-center gap-1 text-xs font-semibold text-[#119197] hover:text-[#0c6e73] group-hover:gap-2 transition-all">
                     View Details <IconChevronRight size={13} />
                   </Link>
                 </div>
@@ -157,11 +157,11 @@ export function Diseases() {
             </div>
 
             {/* CTA */}
-            <div className="mt-10 rounded-2xl bg-gradient-to-r from-red-600 to-rose-600 text-white p-8 text-center">
+            <div className="mt-10 rounded-2xl bg-gradient-to-r from-[#0c6e73] to-[#119197] text-white p-8 text-center">
               <h3 className="font-display font-extrabold text-xl mb-2">Need More Help?</h3>
-              <p className="text-red-100 text-sm mb-5">Can't find what you're looking for? Get instant support from our health resources.</p>
+              <p className="text-teal-100 text-sm mb-5">Can't find what you're looking for? Get instant support from our health resources.</p>
               <div className="flex gap-3 justify-center">
-                <button className="px-5 py-2.5 rounded-xl bg-white text-red-600 font-bold text-sm hover:bg-red-50 transition-colors">Ask AI</button>
+                <button className="px-5 py-2.5 rounded-xl bg-white text-[#119197] font-bold text-sm hover:bg-[#e6f7f7] transition-colors">Ask AI</button>
                 <a href="tel:907" className="px-5 py-2.5 rounded-xl border-2 border-white text-white font-bold text-sm hover:bg-white/10 transition-colors flex items-center gap-2">
                   <IconPhone size={15} /> Emergency Help
                 </a>

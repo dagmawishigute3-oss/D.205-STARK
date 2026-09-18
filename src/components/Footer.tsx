@@ -1,120 +1,85 @@
 import { Link } from 'react-router-dom';
-import { IconPhone, IconMail, IconMapPin, IconClock, IconHeart } from './Icons';
+import logoImg from '../imports/image-removebg-preview.png';
 
-const NAV = ['Home', 'About Us', 'Emergency', 'Disease Library', 'Health Tips', 'Contact'];
-const RESOURCES = ['AI Health Assistant', 'Health Tips', 'Symptom Checker', 'Disease Library'];
-const LEGAL = ['Privacy Policy', 'Terms of Service', 'FAQ', 'Support Center'];
+const QUICK_LINKS = [
+  { label: 'Home',            href: '/' },
+  { label: 'About',           href: '/about' },
+  { label: 'Emergency',       href: '/emergency' },
+  { label: 'First Aid',       href: '/first-aid' },
+  { label: 'Disease Library', href: '/diseases' },
+  { label: 'Health Tips',     href: '/health-tips' },
+  { label: 'Contact',         href: '/contact' },
+];
 
-const HREF: Record<string, string> = {
-  'Home': '/', 'About Us': '/about', 'Emergency': '/emergency',
-  'Disease Library': '/diseases', 'Health Tips': '/health-tips', 'Contact': '/contact',
-};
+const LEGAL_LINKS = ['Privacy Policy', 'Terms of Service', 'Medical Disclaimer', 'Accessibility'];
 
 export function Footer() {
   return (
-    <footer className="bg-gray-900 text-gray-300">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+    <footer className="bg-slate-900 text-slate-400">
+
+      {/* ── Main body ── */}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
+
           {/* Brand */}
           <div>
-            <div className="flex items-center gap-2.5 mb-4">
-              <span className="w-8 h-8 rounded bg-red-600 flex items-center justify-center text-white font-logo font-bold text-sm">ጤ</span>
-              <div className="leading-none">
-                <p className="font-logo text-sm leading-tight">
-                  <span className="text-white">Ten</span><span className="text-red-400">aye</span>
-                </p>
-                <p className="text-[9px] text-gray-500 tracking-wide">ጤናዬ</p>
-              </div>
+            <div className="flex items-center gap-2.5 mb-3">
+              <img src={logoImg} alt="Tenaye" className="w-8 h-8 object-contain" />
+              <p className="font-logo text-sm leading-tight">
+                <span className="text-white bg-[#119197] px-2 py-[2px] rounded-full">Ten</span>
+                <span className="text-[#dc2626] ml-0.5">aye</span>
+              </p>
             </div>
-            <p className="text-sm text-gray-400 leading-relaxed mb-5">
-              Your trusted health information platform providing reliable medical guidance, expert consultations, and comprehensive wellness resources.
+            <p className="text-xs text-slate-500 leading-relaxed mb-3">
+              Reliable health information, emergency guidance, and wellness resources for the Ethiopian community.
             </p>
-            <ul className="space-y-2 text-sm text-gray-500">
-              <li className="flex items-center gap-2"><IconPhone size={14} className="text-red-500 shrink-0"/><span>+251 900 000 000</span></li>
-              <li className="flex items-center gap-2"><IconMail size={14} className="text-red-500 shrink-0"/><span>support@tenaye.health</span></li>
-              <li className="flex items-center gap-2"><IconMapPin size={14} className="text-red-500 shrink-0"/><span>Addis Ababa, Ethiopia</span></li>
-              <li className="flex items-center gap-2"><IconClock size={14} className="text-red-500 shrink-0"/><span>24/7 Emergency · 8AM–6PM General</span></li>
-            </ul>
+            <div className="flex items-center gap-2">
+              <span className="w-1.5 h-1.5 rounded-full bg-[#119197] animate-pulse shrink-0" />
+              <span className="text-xs text-slate-500">
+                Support: <a href="tel:+251900000000" className="hover:text-slate-300 transition-colors">+251 900 000 000</a>
+              </span>
+            </div>
           </div>
 
-          {/* Quick Navigation */}
+          {/* Navigation */}
           <div>
-            <p className="font-display font-semibold text-white text-sm mb-4">Quick Navigation</p>
-            <ul className="space-y-2.5">
-              {NAV.map(l => (
-                <li key={l}>
-                  <Link to={HREF[l] || '/'} className="text-sm text-gray-400 hover:text-white transition-colors">
-                    {l}
+            <p className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-3">Navigation</p>
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-2">
+              {QUICK_LINKS.map(l => (
+                <li key={l.href}>
+                  <Link to={l.href} className="text-xs text-slate-500 hover:text-[#119197] transition-colors">
+                    {l.label}
                   </Link>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Health Resources */}
+          {/* Legal */}
           <div>
-            <p className="font-display font-semibold text-white text-sm mb-4">Health Resources</p>
-            <ul className="space-y-2.5">
-              {RESOURCES.map(l => (
+            <p className="text-xs font-semibold text-slate-300 uppercase tracking-wider mb-3">Legal</p>
+            <ul className="space-y-2">
+              {LEGAL_LINKS.map(l => (
                 <li key={l}>
-                  <span className="text-sm text-gray-400 hover:text-white transition-colors cursor-pointer">{l}</span>
+                  <span className="text-xs text-slate-500 hover:text-slate-300 cursor-pointer transition-colors">{l}</span>
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* Support & Legal */}
-          <div>
-            <p className="font-display font-semibold text-white text-sm mb-4">Support & Legal</p>
-            <ul className="space-y-2.5 mb-6">
-              {LEGAL.map(l => (
-                <li key={l}>
-                  <span className="text-sm text-gray-400 hover:text-white transition-colors cursor-pointer">{l}</span>
-                </li>
-              ))}
-            </ul>
-            <p className="font-display font-semibold text-white text-sm mb-3">Follow Us</p>
-            <div className="flex gap-2">
-              {['f', '𝕏', 'in', '▶', 'yt'].map((s, i) => (
-                <button key={i} className="w-8 h-8 rounded-lg bg-gray-800 hover:bg-gray-700 text-gray-400 hover:text-white transition-colors flex items-center justify-center text-xs">
-                  {s}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Bottom */}
-        <div className="border-t border-gray-800 mt-10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-gray-600">© {new Date().getFullYear()} Tenaye Health Platform. All rights reserved.</p>
-          <div className="flex gap-4 text-xs text-gray-600">
-            <span className="hover:text-gray-400 cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-gray-400 cursor-pointer transition-colors">Terms of Service</span>
-          </div>
         </div>
       </div>
 
-      {/* Medical disclaimer */}
-      <div className="border-t border-gray-800 bg-gray-950 px-4 sm:px-6 py-2">
-        <p className="text-[11px] text-gray-600 text-center">
-          <span className="font-semibold text-gray-500">Medical Disclaimer:</span> The information provided on this platform is for educational purposes only and should not replace professional medical advice. Always consult qualified healthcare providers for medical concerns. In case of emergency, call 907 immediately.
-        </p>
-      </div>
-
-      {/* Emergency bar */}
-      <div className="bg-gray-950 border-t border-gray-800 px-4 sm:px-6 py-2.5 flex items-center justify-between gap-4">
-        <div className="flex items-center gap-2">
-          <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse flex-shrink-0" />
-          <span className="text-xs text-gray-400">
-            <span className="font-semibold text-white">Medical Emergency?</span> Call <span className="text-red-400 font-bold">907</span> immediately
-          </span>
+      {/* ── Bottom bar ── */}
+      <div className="border-t border-slate-800 px-4 sm:px-6 py-3">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2">
+          <p className="text-[11px] text-slate-600">
+            &copy; {new Date().getFullYear()} Tenaye Health Platform &middot; Addis Ababa, Ethiopia
+          </p>
+          <p className="text-[10px] text-slate-700 text-center max-w-md">
+            <span className="text-slate-500 font-medium">Disclaimer:</span>{' '}
+            For educational purposes only. Not a substitute for professional medical advice. Always consult a qualified healthcare provider.
+          </p>
         </div>
-        <a
-          href="tel:907"
-          className="px-4 py-1.5 rounded-lg bg-red-600 hover:bg-red-700 text-white text-xs font-bold transition-colors shrink-0"
-        >
-          Emergency: 907
-        </a>
       </div>
     </footer>
   );

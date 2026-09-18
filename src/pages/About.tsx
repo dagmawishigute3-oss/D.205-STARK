@@ -2,10 +2,10 @@ import { useScrollReveal } from '../hooks/useScrollReveal';
 import { IconHeart, IconShield, IconUsers, IconGlobe, IconTrendingUp, IconClock, IconCheck, IconEye, IconTarget } from '../components/Icons';
 
 const STATS = [
-  { value: '2M+', label: 'Patients Served', color: 'text-red-600' },
-  { value: '500+', label: 'Healthcare Professionals', color: 'text-red-600' },
-  { value: '50+', label: 'Countries Reached', color: 'text-red-600' },
-  { value: '98%', label: 'Patient Satisfaction', color: 'text-red-600' },
+  { value: '2M+', label: 'Patients Served', color: 'text-[#119197]' },
+  { value: '500+', label: 'Healthcare Professionals', color: 'text-[#119197]' },
+  { value: '50+', label: 'Countries Reached', color: 'text-[#119197]' },
+  { value: '98%', label: 'Patient Satisfaction', color: 'text-[#119197]' },
 ];
 
 const VALUES = [
@@ -20,10 +20,10 @@ const VALUES = [
 ];
 
 const TEAM = [
-  { name: 'Yonatan Muluken', role: 'Main & Co-founder', initials: 'Y', color: 'bg-red-600', desc: 'Project founder and team leader; designed the full website architecture, developed the complete platform, and initiated the core concept and technical direction of the project.' },
-  { name: 'Nahom Tebabu', role: 'Co-founder', initials: 'N', color: 'bg-red-600', desc: 'Manages medical data acquisition and verification. Compiled comprehensive disease information for the medical reference library.' },
-  { name: 'Dagmawi Tafari', role: 'Co-founder', initials: 'D', color: 'bg-red-600', desc: 'Conducts medical research and content organization. Ensures accuracy and accessibility of patient education materials.' },
-  { name: 'Ayub Ibrahim', role: 'Co-founder', initials: 'A', color: 'bg-red-600', desc: 'Oversees data quality assurance and medical content validation. Maintains information integrity across the platform.' },
+  { name: 'Yonatan Muluken', role: 'Main & Co-founder', initials: 'Y', color: 'bg-[#119197]', desc: 'Project founder and team leader; designed the full website architecture, developed the complete platform, and initiated the core concept and technical direction of the project.' },
+  { name: 'Nahom Tebabu', role: 'Co-founder', initials: 'N', color: 'bg-[#119197]', desc: 'Manages medical data acquisition and verification. Compiled comprehensive disease information for the medical reference library.' },
+  { name: 'Dagmawi Tafari', role: 'Co-founder', initials: 'D', color: 'bg-[#119197]', desc: 'Conducts medical research and content organization. Ensures accuracy and accessibility of patient education materials.' },
+  { name: 'Ayub Ibrahim', role: 'Co-founder', initials: 'A', color: 'bg-[#119197]', desc: 'Oversees data quality assurance and medical content validation. Maintains information integrity across the platform.' },
 ];
 
 export function About() {
@@ -36,12 +36,12 @@ export function About() {
   return (
     <main className="pt-16 bg-gray-50 min-h-screen">
       {/* Page header */}
-      <div className="bg-gradient-to-br from-red-600 to-rose-700 text-white">
+      <div className="bg-gradient-to-br from-[#0c6e73] to-[#119197] text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 text-center">
           <h1 className="font-display font-extrabold text-4xl sm:text-5xl text-white mb-4">
             Transforming Healthcare<br />Through Innovation
           </h1>
-          <p className="text-red-100 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-teal-100 max-w-2xl mx-auto leading-relaxed">
             At Tenaye, we're dedicated to making quality healthcare accessible, understandable, and actionable for everyone. Our mission is to empower individuals with the knowledge and tools they need to make informed health decisions.
           </p>
         </div>
@@ -62,10 +62,10 @@ export function About() {
         <div ref={ref2} className="grid sm:grid-cols-2 gap-5 mb-12">
           <div className="bg-white border border-gray-200 rounded-xl p-7 hover:shadow-md transition-shadow">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center">
-                <IconTarget size={16} className="text-red-600" />
+              <div className="w-8 h-8 rounded-lg bg-[#e6f7f7] flex items-center justify-center">
+                <IconTarget size={16} className="text-[#119197]" />
               </div>
-              <h2 className="font-display font-bold text-red-600 text-base">Our Mission</h2>
+              <h2 className="font-display font-bold text-[#119197] text-base">Our Mission</h2>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               To democratize healthcare by providing accurate, accessible, and actionable health information. We bridge the gap between complex medical knowledge and everyday health decisions, empowering individuals to take control of their health journey with confidence.
@@ -73,10 +73,10 @@ export function About() {
           </div>
           <div className="bg-white border border-gray-200 rounded-xl p-7 hover:shadow-md transition-shadow">
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-red-100 flex items-center justify-center">
-                <IconEye size={16} className="text-red-600" />
+              <div className="w-8 h-8 rounded-lg bg-[#e6f7f7] flex items-center justify-center">
+                <IconEye size={16} className="text-[#119197]" />
               </div>
-              <h2 className="font-display font-bold text-red-600 text-base">Our Vision</h2>
+              <h2 className="font-display font-bold text-[#119197] text-base">Our Vision</h2>
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">
               A world where everyone has access to personalized, high-quality healthcare guidance. We envision a future where technology and human expertise work together to create healthier communities and improve quality of life for all.
@@ -91,7 +91,7 @@ export function About() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
             {VALUES.map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-white border border-gray-200 rounded-xl p-5 hover:shadow-md hover:border-gray-300 transition-all">
-                <Icon size={24} className="text-red-600 mb-3" />
+                <Icon size={24} className="text-[#119197] mb-3" />
                 <h3 className="font-display font-bold text-gray-900 text-sm mb-2">{title}</h3>
                 <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
               </div>
@@ -127,7 +127,7 @@ export function About() {
                     <svg viewBox="0 0 24 24" fill="currentColor" className="w-3.5 h-3.5"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
                   </button>
                   {/* Email */}
-                  <button className="w-8 h-8 rounded-lg bg-gray-100 hover:bg-red-600 hover:text-white text-gray-500 flex items-center justify-center transition-colors">
+                  <button className="w-8 h-8 rounded-lg bg-gray-100 hover:bg-[#119197] hover:text-white text-gray-500 flex items-center justify-center transition-colors">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 7L2 7"/></svg>
                   </button>
                 </div>
@@ -137,11 +137,11 @@ export function About() {
         </div>
 
         {/* Join CTA */}
-        <div ref={ref5} className="rounded-2xl bg-gradient-to-r from-red-600 to-rose-600 text-white p-10 text-center">
+        <div ref={ref5} className="rounded-2xl bg-gradient-to-r from-[#0c6e73] to-[#119197] text-white p-10 text-center">
           <h3 className="font-display font-extrabold text-2xl sm:text-3xl mb-2">Join Our Health Community</h3>
-          <p className="text-red-100 text-sm mb-6">Be part of a community that's committed to better health outcomes for everyone</p>
+          <p className="text-teal-100 text-sm mb-6">Be part of a community that's committed to better health outcomes for everyone</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <button className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white text-red-600 font-bold text-sm hover:bg-red-50 transition-colors">
+            <button className="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white text-[#119197] font-bold text-sm hover:bg-[#e6f7f7] transition-colors">
               <IconHeart size={16} /> Join Now
             </button>
             <button className="flex items-center gap-2 px-6 py-2.5 rounded-xl border-2 border-white text-white font-bold text-sm hover:bg-white/10 transition-colors">

@@ -23,10 +23,10 @@ export function Contact() {
   return (
     <main className="pt-16 bg-gray-50 min-h-screen">
       {/* Header */}
-      <div className="bg-gradient-to-br from-red-600 to-rose-700 text-white">
+      <div className="bg-gradient-to-br from-[#0c6e73] to-[#119197] text-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 py-14 text-center">
           <h1 className="font-display font-extrabold text-4xl text-white mb-2">Get in Touch</h1>
-          <p className="text-red-100">Questions, feedback, or partnership inquiries — we'd love to hear from you</p>
+          <p className="text-teal-100">Questions, feedback, or partnership inquiries — we'd love to hear from you</p>
         </div>
       </div>
 
@@ -36,8 +36,8 @@ export function Contact() {
           <div className="flex flex-col gap-4">
             {CONTACT_INFO.map(({ icon: Icon, label, value, sub }) => (
               <div key={label} className="bg-white border border-gray-200 rounded-xl p-5 flex items-start gap-4 hover:shadow-md transition-shadow">
-                <div className="w-10 h-10 rounded-xl bg-red-100 flex items-center justify-center shrink-0">
-                  <Icon size={18} className="text-red-600" />
+                <div className="w-10 h-10 rounded-xl bg-[#e6f7f7] flex items-center justify-center shrink-0">
+                  <Icon size={18} className="text-[#119197]" />
                 </div>
                 <div>
                   <p className="text-xs text-gray-400 font-medium mb-0.5">{label}</p>
@@ -78,7 +78,7 @@ export function Contact() {
                 </div>
                 <h3 className="font-display font-bold text-gray-900 text-xl">Message sent!</h3>
                 <p className="text-gray-500 text-sm">We'll get back to you within 24 hours.</p>
-                <button onClick={() => setSent(false)} className="text-red-600 text-sm font-medium hover:underline">
+                <button onClick={() => setSent(false)} className="text-[#119197] text-sm font-medium hover:underline">
                   Send another message
                 </button>
               </div>
@@ -94,7 +94,7 @@ export function Contact() {
                         placeholder="Abebe Girma"
                         value={form.name}
                         onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
-                        className="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 transition-all"
+                        className="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-[#119197] focus:ring-2 focus:ring-[#e6f7f7] transition-all"
                       />
                     </div>
                     <div>
@@ -104,7 +104,7 @@ export function Contact() {
                         placeholder="abebe@example.com"
                         value={form.email}
                         onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
-                        className="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 transition-all"
+                        className="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-[#119197] focus:ring-2 focus:ring-[#e6f7f7] transition-all"
                       />
                     </div>
                   </div>
@@ -115,7 +115,7 @@ export function Contact() {
                       placeholder="How can we help?"
                       value={form.subject}
                       onChange={e => setForm(f => ({ ...f, subject: e.target.value }))}
-                      className="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 transition-all"
+                      className="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-[#119197] focus:ring-2 focus:ring-[#e6f7f7] transition-all"
                     />
                   </div>
                   <div>
@@ -125,12 +125,12 @@ export function Contact() {
                       placeholder="Tell us about your inquiry…"
                       value={form.message}
                       onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
-                      className="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-red-400 focus:ring-2 focus:ring-red-100 transition-all resize-none"
+                      className="w-full border border-gray-200 rounded-xl px-3.5 py-2.5 text-sm text-gray-800 placeholder-gray-400 outline-none focus:border-[#119197] focus:ring-2 focus:ring-[#e6f7f7] transition-all resize-none"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-red-600 hover:bg-red-700 text-white font-display font-bold text-sm transition-colors"
+                    className="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-[#119197] hover:bg-[#0c6e73] text-white font-display font-bold text-sm transition-colors"
                   >
                     <IconSend size={16} /> Send Message
                   </button>

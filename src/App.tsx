@@ -1,4 +1,11 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
+
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => { window.scrollTo({ top: 0, behavior: 'smooth' }); }, [pathname]);
+  return null;
+}
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { AIAssistant } from './components/AIAssistant';
@@ -12,9 +19,11 @@ import { About } from './pages/About';
 import { Contact } from './pages/Contact';
 
 export default function App() {
+  useEffect(() => { document.title = 'Tenaye'; }, []);
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-gray-50 flex flex-col">
+        <ScrollToTop />
         <Navbar />
         <div className="flex-1">
           <Routes>

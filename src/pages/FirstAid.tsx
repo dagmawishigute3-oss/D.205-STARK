@@ -73,7 +73,7 @@ function CprAnim() {
         </g>
       </svg>
       <div className="text-center">
-        <p className="text-[11px] font-bold text-red-600 uppercase tracking-wide">30 compressions : 2 breaths</p>
+        <p className="text-[11px] font-bold text-[#119197] uppercase tracking-wide">30 compressions : 2 breaths</p>
         <p className="text-[10px] text-gray-400 mt-0.5">100–120 compressions / min · 5–6 cm depth</p>
       </div>
     </div>
@@ -96,7 +96,7 @@ function BleedingAnim() {
         <path d="M52 46 L60 55 L68 46" stroke="#dc2626" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
       <div className="text-center">
-        <p className="text-[11px] font-bold text-red-600 uppercase tracking-wide">Direct Pressure</p>
+        <p className="text-[11px] font-bold text-[#119197] uppercase tracking-wide">Direct Pressure</p>
         <p className="text-[10px] text-gray-400 mt-0.5">Hold firmly for 15 minutes without lifting</p>
       </div>
     </div>
@@ -124,7 +124,7 @@ function ChokingAnim() {
         <path d="M65 70 L72 62 L79 70" stroke="#dc2626" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
       </svg>
       <div className="text-center">
-        <p className="text-[11px] font-bold text-red-600 uppercase tracking-wide">Heimlich Maneuver</p>
+        <p className="text-[11px] font-bold text-[#119197] uppercase tracking-wide">Heimlich Maneuver</p>
         <p className="text-[10px] text-gray-400 mt-0.5">Inward &amp; upward thrusts above navel</p>
       </div>
     </div>
@@ -148,7 +148,7 @@ function FractureAnim() {
         ))}
       </svg>
       <div className="text-center">
-        <p className="text-[11px] font-bold text-red-600 uppercase tracking-wide">Immobilize &amp; Splint</p>
+        <p className="text-[11px] font-bold text-[#119197] uppercase tracking-wide">Immobilize &amp; Splint</p>
         <p className="text-[10px] text-gray-400 mt-0.5">Do NOT attempt to realign the bone</p>
       </div>
     </div>
@@ -174,7 +174,7 @@ function BurnsAnim() {
         <path d="M94 16 v6" stroke="#3b82f6" strokeWidth="2"/>
       </svg>
       <div className="text-center">
-        <p className="text-[11px] font-bold text-red-600 uppercase tracking-wide">Cool with running water</p>
+        <p className="text-[11px] font-bold text-[#119197] uppercase tracking-wide">Cool with running water</p>
         <p className="text-[10px] text-gray-400 mt-0.5">Cool (not cold) water · 10–20 minutes</p>
       </div>
     </div>
@@ -202,7 +202,7 @@ function SprainsAnim() {
         <text x="100" y="116" textAnchor="middle" fontSize="7" fill="#059669" fontFamily="sans-serif">ELEVATE</text>
       </svg>
       <div className="text-center">
-        <p className="text-[11px] font-bold text-red-600 uppercase tracking-wide">R.I.C.E Protocol</p>
+        <p className="text-[11px] font-bold text-[#119197] uppercase tracking-wide">R.I.C.E Protocol</p>
         <p className="text-[10px] text-gray-400 mt-0.5">Rest · Ice · Compress · Elevate</p>
       </div>
     </div>
@@ -368,13 +368,13 @@ export function FirstAid() {
   return (
     <main className="pt-16 bg-gray-50 min-h-screen">
       {/* Dark green header */}
-      <div className="bg-gradient-to-br from-red-600 to-rose-700 text-white">
+      <div className="bg-gradient-to-br from-[#0c6e73] to-[#119197] text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 py-14 text-center">
           <div className="inline-flex w-12 h-12 rounded-xl bg-white/10 items-center justify-center mx-auto mb-4">
             <IconHeart size={24} className="text-red-200" />
           </div>
           <h1 className="font-display font-extrabold text-4xl text-white mb-2">First Aid Guides</h1>
-          <p className="text-red-100 text-sm">Step-by-step visual instructions for life-threatening emergencies</p>
+          <p className="text-teal-100 text-sm">Step-by-step visual instructions for life-threatening emergencies</p>
         </div>
       </div>
 
@@ -387,21 +387,21 @@ export function FirstAid() {
                 <button
                   key={g.id}
                   onClick={() => { setSelected(g.id); setTab('steps'); }}
-                  className="wave-card bg-white border-2 border-red-100 rounded-2xl p-6 text-left hover:border-red-400 cursor-pointer group transition-colors"
+                  className="wave-card bg-white border-2 border-[#cceef0] rounded-2xl p-6 text-left hover:border-[#119197] cursor-pointer group transition-colors"
                 >
-                  <div className="text-red-500 mb-4 group-hover:text-red-600 transition-colors">{g.icon}</div>
-                  <h3 className="font-display font-extrabold text-red-700 text-base mb-1">{g.title}</h3>
-                  <p className="text-[11px] text-red-400 mb-3">{g.amharic}</p>
+                  <div className="text-[#119197] mb-4 group-hover:text-[#0c6e73] transition-colors">{g.icon}</div>
+                  <h3 className="font-display font-extrabold text-gray-900 text-base mb-1">{g.title}</h3>
+                  <p className="text-[11px] text-gray-400 mb-3">{g.amharic}</p>
                   <span className={`inline-flex text-[10px] font-semibold px-2 py-0.5 rounded-full ${URGENCY_COLOR[g.urgency]}`}>{g.urgency}</span>
                 </button>
               ))}
             </div>
-            <div className="mt-8 rounded-2xl bg-red-600 text-white p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="mt-8 rounded-2xl bg-[#dc2626] text-white p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
               <div className="flex items-center gap-3">
                 <IconAlertTriangle size={20} className="shrink-0" />
                 <p className="font-semibold text-sm">Always call emergency services first in a life-threatening situation</p>
               </div>
-              <a href="tel:907" className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-red-600 font-bold text-sm hover:bg-red-50 transition-colors shrink-0">
+              <a href="tel:907" className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-[#dc2626] font-bold text-sm hover:bg-red-50 transition-colors shrink-0">
                 <IconPhone size={15} /> Call 907
               </a>
             </div>
@@ -415,14 +415,14 @@ export function FirstAid() {
 
             <div className="bg-white border border-gray-200 rounded-2xl overflow-hidden shadow-sm">
               {/* Card header */}
-              <div className="bg-gradient-to-r from-red-600 to-rose-600 text-white p-8 flex flex-col sm:flex-row items-start gap-6">
+              <div className="bg-gradient-to-r from-[#0c6e73] to-[#119197] text-white p-8 flex flex-col sm:flex-row items-start gap-6">
                 <div className="text-white/80 shrink-0">{guide.icon}</div>
                 <div className="flex-1">
                   <div className="flex items-center gap-3 mb-1 flex-wrap">
                     <h2 className="font-display font-extrabold text-2xl">{guide.title}</h2>
                     <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-white/20">{guide.urgency}</span>
                   </div>
-                  <p className="text-red-100 text-sm mb-3">{guide.amharic}</p>
+                  <p className="text-teal-100 text-sm mb-3">{guide.amharic}</p>
                   <p className="text-white/90 text-sm leading-relaxed">{guide.overview}</p>
                 </div>
               </div>
@@ -433,7 +433,7 @@ export function FirstAid() {
                   <button
                     key={t}
                     onClick={() => setTab(t)}
-                    className={`flex-1 py-3 text-xs font-semibold transition-colors ${tab === t ? 'text-red-600 border-b-2 border-red-600 bg-white' : 'text-gray-500 hover:text-gray-700'}`}
+                    className={`flex-1 py-3 text-xs font-semibold transition-colors ${tab === t ? 'text-[#119197] border-b-2 border-[#119197] bg-white' : 'text-gray-500 hover:text-gray-700'}`}
                   >
                     {t === 'steps' ? 'Step-by-Step' : t === 'facts' ? 'Key Facts' : 'Do NOT Do'}
                   </button>
@@ -445,8 +445,8 @@ export function FirstAid() {
                   {tab === 'steps' && (
                     <div className="flex flex-col gap-3">
                       {guide.steps.map((s, i) => (
-                        <div key={i} className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-red-100 transition-colors">
-                          <span className="w-7 h-7 rounded-full bg-red-600 text-white font-display font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                        <div key={i} className="flex items-start gap-4 p-4 bg-gray-50 rounded-xl border border-gray-100 hover:border-[#cceef0] transition-colors">
+                          <span className="w-7 h-7 rounded-full bg-[#119197] text-white font-display font-bold text-xs flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
                           <div>
                             <p className="font-display font-bold text-gray-900 text-sm mb-0.5">{s.title}</p>
                             <p className="text-gray-500 text-sm leading-relaxed">{s.detail}</p>
@@ -458,8 +458,8 @@ export function FirstAid() {
                   {tab === 'facts' && (
                     <div className="grid sm:grid-cols-2 gap-3">
                       {guide.keyFacts.map((f, i) => (
-                        <div key={i} className="flex items-start gap-3 p-4 bg-red-50 border border-red-100 rounded-xl">
-                          <span className="w-5 h-5 rounded-full bg-red-600 text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
+                        <div key={i} className="flex items-start gap-3 p-4 bg-[#fef9f9] border border-red-100 rounded-xl">
+                          <span className="w-5 h-5 rounded-full bg-[#119197] text-white text-[10px] font-bold flex items-center justify-center shrink-0 mt-0.5">{i + 1}</span>
                           <p className="text-sm text-red-900 leading-relaxed">{f}</p>
                         </div>
                       ))}
@@ -468,8 +468,8 @@ export function FirstAid() {
                   {tab === 'avoid' && (
                     <div className="flex flex-col gap-3">
                       {guide.doNot.map((d, i) => (
-                        <div key={i} className="flex items-start gap-3 p-4 bg-red-50 border border-red-100 rounded-xl">
-                          <span className="text-red-600 shrink-0 mt-0.5">
+                        <div key={i} className="flex items-start gap-3 p-4 bg-[#fef9f9] border border-red-100 rounded-xl">
+                          <span className="text-[#dc2626] shrink-0 mt-0.5">
                             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-5 h-5"><circle cx="12" cy="12" r="10"/><path d="M15 9l-6 6M9 9l6 6"/></svg>
                           </span>
                           <p className="text-sm text-red-800 font-medium leading-relaxed">{d}</p>
@@ -490,12 +490,12 @@ export function FirstAid() {
               </div>
 
               {/* Emergency footer */}
-              <div className="px-6 sm:px-8 py-5 bg-red-50 border-t border-red-100 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div className="px-6 sm:px-8 py-5 bg-[#e6f7f7]/30 border-t border-[#cceef0] flex flex-col sm:flex-row items-center justify-between gap-3">
                 <div className="flex items-center gap-2">
-                  <IconAlertTriangle size={15} className="text-red-600 shrink-0" />
+                  <IconAlertTriangle size={15} className="text-[#dc2626] shrink-0" />
                   <p className="text-sm text-red-700 font-medium">Always call emergency services first in a life-threatening situation</p>
                 </div>
-                <a href="tel:907" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-red-600 hover:bg-red-700 text-white text-sm font-bold transition-colors shrink-0">
+                <a href="tel:907" className="flex items-center gap-2 px-4 py-2 rounded-lg bg-[#dc2626] hover:bg-[#b91c1c] text-white text-sm font-bold transition-colors shrink-0">
                   <IconPhone size={14} /> Call 907
                 </a>
               </div>

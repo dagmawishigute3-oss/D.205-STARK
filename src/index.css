@@ -2,15 +2,26 @@
 @import 'tailwindcss';
 
 @theme inline {
-  --color-background: #f9fafb;
-  --color-foreground: #111827;
+  /* ── Neutral surfaces ── */
+  --color-background: #f8fafc;
+  --color-foreground: #0f172a;
   --color-card: #ffffff;
-  --color-border: #e5e7eb;
-  --color-primary: #dc2626;
-  --color-primary-hover: #b91c1c;
-  --color-primary-light: #fef2f2;
-  --color-muted: #6b7280;
-  --color-muted-bg: #f3f4f6;
+  --color-border: #e2e8f0;
+  --color-muted: #64748b;
+  --color-muted-bg: #f1f5f9;
+
+  /* ── Primary: Tenaye teal (#119197) ── */
+  --color-primary: #119197;
+  --color-primary-dark: #0c6e73;
+  --color-primary-hover: #0e7d83;
+  --color-primary-light: #e6f7f7;
+  --color-primary-mid: #cceef0;
+
+  /* ── Accent: red — emergency / SOS / critical alerts ONLY ── */
+  --color-accent: #dc2626;
+  --color-accent-hover: #b91c1c;
+  --color-accent-light: #fef2f2;
+
   --font-display: 'Plus Jakarta Sans', sans-serif;
   --font-body: 'Inter', sans-serif;
   --radius: 0.75rem;
@@ -23,12 +34,12 @@
 html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
-  scrollbar-color: #e5e7eb transparent;
+  scrollbar-color: #cbd5e1 transparent;
 }
 
 body {
-  background-color: #f9fafb;
-  color: #111827;
+  background-color: #f8fafc;
+  color: #0f172a;
   font-family: 'Inter', sans-serif;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
@@ -43,58 +54,63 @@ h1, h2, h3, h4, h5, h6 {
 
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: #e5e7eb; border-radius: 9999px; }
+::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 9999px; }
 
-/* Scroll reveal */
+/* ── Scroll reveal ── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.animate-fade-up {
-  animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both;
+.animate-fade-up { animation: fadeUp 0.55s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+/* ── Chat overlay slide-in ── */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(24px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
+.animate-slide-in { animation: slideInRight 0.22s cubic-bezier(0.16, 1, 0.3, 1) both; }
 .delay-100 { animation-delay: 0.10s; }
 .delay-200 { animation-delay: 0.20s; }
 .delay-300 { animation-delay: 0.30s; }
 .delay-400 { animation-delay: 0.40s; }
 
-/* Emergency pulse */
+/* ── Emergency pulse (red — SOS only) ── */
 @keyframes pulseRed {
   0%, 100% { box-shadow: 0 0 0 0 rgba(220,38,38,0.35); }
   50%       { box-shadow: 0 0 0 8px rgba(220,38,38,0); }
 }
 .pulse-red { animation: pulseRed 2s ease-in-out infinite; }
 
-/* Severity */
-.badge { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 9999px; font-size: 0.7rem; font-weight: 600; border: 1px solid transparent; font-family: 'Plus Jakarta Sans', sans-serif; }
-.badge-high { background: #fef2f2; color: #dc2626; border-color: #fecaca; }
-.badge-medium { background: #fffbeb; color: #d97706; border-color: #fde68a; }
-.badge-low { background: #f0fdf4; color: #16a34a; border-color: #bbf7d0; }
-.badge-blue { background: #eff6ff; color: #2563eb; border-color: #bfdbfe; }
-.badge-gray { background: #f3f4f6; color: #374151; border-color: #e5e7eb; }
+/* ── Teal pulse (primary) ── */
+@keyframes pulseTeal {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(17,145,151,0.35); }
+  50%       { box-shadow: 0 0 0 8px rgba(17,145,151,0); }
+}
+.pulse-teal { animation: pulseTeal 2s ease-in-out infinite; }
 
-/* Logo font */
+/* ── Severity badges ── */
+.badge { display: inline-flex; align-items: center; padding: 2px 10px; border-radius: 9999px; font-size: 0.7rem; font-weight: 600; border: 1px solid transparent; font-family: 'Plus Jakarta Sans', sans-serif; }
+.badge-high   { background: #fef2f2; color: #dc2626; border-color: #fecaca; }
+.badge-medium { background: #fffbeb; color: #d97706; border-color: #fde68a; }
+.badge-low    { background: #f0fdf4; color: #16a34a; border-color: #bbf7d0; }
+.badge-teal   { background: #e6f7f7; color: #119197; border-color: #cceef0; }
+.badge-blue   { background: #eff6ff; color: #2563eb; border-color: #bfdbfe; }
+.badge-gray   { background: #f1f5f9; color: #475569; border-color: #e2e8f0; }
+
+/* ── Logo font ── */
 .font-logo { font-family: 'Unbounded', sans-serif; }
 
-/* First Aid wave cards */
+/* ── First Aid wave cards ── */
 @keyframes waveIn {
   0%   { opacity: 0; transform: translateY(32px) scale(0.95); }
   60%  { transform: translateY(-6px) scale(1.01); }
   100% { opacity: 1; transform: translateY(0) scale(1); }
 }
-.wave-card {
-  animation: waveIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both;
-}
-.wave-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(220,38,38,0.15); }
+.wave-card { animation: waveIn 0.55s cubic-bezier(0.34, 1.56, 0.64, 1) both; }
 .wave-card { transition: transform 0.25s ease, box-shadow 0.25s ease; }
+.wave-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(17,145,151,0.15); }
 
-@keyframes waveCardBg {
-  0%   { background-position: 0% 50%; }
-  50%  { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* CPR compression animation */
+/* ── CPR animations ── */
 @keyframes compress {
   0%, 100% { transform: scaleY(1) translateY(0); }
   40%       { transform: scaleY(0.88) translateY(4px); }
@@ -107,14 +123,28 @@ h1, h2, h3, h4, h5, h6 {
   0%, 100% { opacity: 1; transform: scale(1); }
   50%       { opacity: 0.6; transform: scale(0.97); }
 }
-.animate-compress { animation: compress 0.8s ease-in-out infinite; }
+.animate-compress     { animation: compress 0.8s ease-in-out infinite; }
 .animate-compress-arm { animation: compressionArm 0.8s ease-in-out infinite; }
-.animate-breath { animation: breathPulse 2s ease-in-out infinite; }
+.animate-breath       { animation: breathPulse 2s ease-in-out infinite; }
 
-/* Stagger for wave cards */
+/* ── Wave card stagger ── */
 .wave-card:nth-child(1) { animation-delay: 0.05s; }
 .wave-card:nth-child(2) { animation-delay: 0.12s; }
 .wave-card:nth-child(3) { animation-delay: 0.19s; }
 .wave-card:nth-child(4) { animation-delay: 0.26s; }
 .wave-card:nth-child(5) { animation-delay: 0.33s; }
 .wave-card:nth-child(6) { animation-delay: 0.40s; }
+
+/* ── Hide scrollbar utility ── */
+.scrollbar-none { scrollbar-width: none; }
+.scrollbar-none::-webkit-scrollbar { display: none; }
+
+/* ── Teal utility classes ── */
+.bg-teal-brand    { background-color: #119197; }
+.bg-teal-dark     { background-color: #0c6e73; }
+.bg-teal-light    { background-color: #e6f7f7; }
+.text-teal-brand  { color: #119197; }
+.text-teal-dark   { color: #0c6e73; }
+.border-teal      { border-color: #119197; }
+.hover\:bg-teal-brand:hover { background-color: #119197; }
+.ring-teal        { --tw-ring-color: rgba(17,145,151,0.25); }

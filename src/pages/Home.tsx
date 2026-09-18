@@ -35,14 +35,14 @@ export function Home() {
   return (
     <main className="pt-16">
       {/* ── HERO ── */}
-      <section className="bg-gradient-to-br from-red-600 via-red-600 to-rose-700 text-white">
+      <section className="bg-gradient-to-br from-[#0c6e73] via-[#119197] to-[#0e9fa6] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 py-16 lg:py-24 grid lg:grid-cols-2 gap-12 items-center">
           {/* Left */}
           <div className="animate-fade-up">
             <h1 className="font-display font-extrabold text-4xl sm:text-5xl xl:text-6xl text-white mb-4 leading-[1.1]">
               Your Trusted Health Companion
             </h1>
-            <p className="text-red-100 text-lg mb-8 leading-relaxed max-w-lg">
+            <p className="text-teal-100 text-lg mb-8 leading-relaxed max-w-lg">
               Access reliable medical information, connect with healthcare professionals, and take control of your health journey with confidence and care.
             </p>
 
@@ -57,7 +57,7 @@ export function Home() {
                 className="flex-1 text-gray-800 text-sm placeholder-gray-400 outline-none bg-transparent"
               />
             </div>
-            <p className="text-red-200 text-xs mb-8">
+            <p className="text-teal-100/80 text-xs mb-8">
               Popular searches:{' '}
               <Link to="/diseases" className="underline hover:text-white">Diabetes symptoms</Link>{' '}
               <Link to="/diseases" className="underline hover:text-white">Heart disease prevention</Link>{' '}
@@ -65,10 +65,10 @@ export function Home() {
             </p>
 
             <div className="flex flex-wrap gap-3">
-              <Link to="/diseases" className="flex items-center gap-2 px-5 py-2.5 rounded-xl border-2 border-white text-white font-semibold text-sm hover:bg-white hover:text-red-600 transition-colors">
+              <Link to="/diseases" className="flex items-center gap-2 px-5 py-2.5 rounded-xl border-2 border-white text-white font-semibold text-sm hover:bg-white hover:text-[#119197] transition-colors">
                 <IconSearch size={16} /> Disease Library
               </Link>
-              <a href="tel:907" className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-red-600 font-semibold text-sm hover:bg-red-50 transition-colors">
+              <a href="tel:907" className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#dc2626] hover:bg-[#b91c1c] text-white font-semibold text-sm transition-colors">
                 <IconPhone size={16} /> Emergency Help
               </a>
             </div>
@@ -77,11 +77,11 @@ export function Home() {
           {/* Right — doctor photo */}
           <div className="hidden lg:block animate-fade-up delay-200">
             <div className="relative">
-              <div className="absolute inset-0 rounded-2xl bg-red-500/30 translate-x-4 translate-y-4" />
+              <div className="absolute inset-0 rounded-2xl bg-[#119197]/30 translate-x-4 translate-y-4" />
               <img
                 src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?w=600&h=480&fit=crop&auto=format"
                 alt="Healthcare professional"
-                className="relative rounded-2xl w-full h-[380px] object-cover border-4 border-red-500/30"
+                className="relative rounded-2xl w-full h-[380px] object-cover border-4 border-[#119197]/30"
               />
             </div>
           </div>
@@ -93,7 +93,7 @@ export function Home() {
         <div ref={statsRef} className="max-w-4xl mx-auto px-4 sm:px-6 py-10 grid grid-cols-3 gap-6">
           {STATS.map(({ icon: Icon, value, label }) => (
             <div key={label} className="flex flex-col items-center text-center">
-              <Icon size={28} className="text-red-600 mb-2" />
+              <Icon size={28} className="text-[#119197] mb-2" />
               <p className="font-display font-extrabold text-2xl sm:text-3xl text-gray-900">{value}</p>
               <p className="text-sm text-gray-500 mt-0.5">{label}</p>
             </div>
@@ -109,7 +109,7 @@ export function Home() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {WHY.map(({ icon: Icon, title, desc }) => (
               <div key={title} className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md hover:border-gray-300 transition-all duration-200">
-                <Icon size={28} className="text-red-600 mb-4" />
+                <Icon size={28} className="text-[#119197] mb-4" />
                 <h3 className="font-display font-bold text-gray-900 text-sm mb-2">{title}</h3>
                 <p className="text-xs text-gray-500 leading-relaxed">{desc}</p>
               </div>
@@ -127,12 +127,12 @@ export function Home() {
             {FEATURED.map(({ icon: Icon, tag, title, desc, href }) => (
               <div key={title} className="bg-white rounded-xl border border-gray-200 p-6 hover:shadow-md hover:border-gray-300 transition-all duration-200 group">
                 <div className="flex items-start justify-between mb-4">
-                  <Icon size={28} className="text-red-600" />
+                  <Icon size={28} className="text-[#119197]" />
                   <span className="badge badge-gray">{tag}</span>
                 </div>
                 <h3 className="font-display font-bold text-gray-900 text-lg mb-2">{title}</h3>
                 <p className="text-sm text-gray-500 leading-relaxed mb-5">{desc}</p>
-                <Link to="/diseases" className="text-sm font-semibold text-red-600 hover:text-red-700 transition-colors flex items-center gap-1 group-hover:gap-2">
+                <Link to="/diseases" className="text-sm font-semibold text-[#119197] hover:text-[#0c6e73] transition-colors flex items-center gap-1 group-hover:gap-2">
                   Learn More <span className="transition-all">→</span>
                 </Link>
               </div>
@@ -143,12 +143,12 @@ export function Home() {
 
       {/* ── CTAS ── */}
       <section ref={ctaRef} className="py-8 max-w-6xl mx-auto px-4 sm:px-6 flex flex-col gap-5">
-        {/* Emergency CTA */}
-        <div className="rounded-2xl bg-gradient-to-r from-red-600 to-rose-600 text-white p-10 text-center">
+        {/* Emergency CTA — teal primary, red accent on call button only */}
+        <div className="rounded-2xl bg-gradient-to-r from-[#0c6e73] to-[#119197] text-white p-10 text-center">
           <h3 className="font-display font-extrabold text-2xl sm:text-3xl mb-2">Need Immediate Help?</h3>
-          <p className="text-red-100 text-sm mb-6">Get instant access to healthcare professionals and emergency services</p>
+          <p className="text-teal-100 text-sm mb-6">Get instant access to healthcare professionals and emergency services</p>
           <div className="flex flex-wrap gap-3 justify-center">
-            <a href="tel:907" className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-red-600 font-semibold text-sm hover:bg-red-50 transition-colors">
+            <a href="tel:907" className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-[#dc2626] hover:bg-[#b91c1c] text-white font-semibold text-sm transition-colors">
               <IconPhone size={16} /> Emergency Services
             </a>
             <button className="flex items-center gap-2 px-5 py-2.5 rounded-xl border-2 border-white text-white font-semibold text-sm hover:bg-white/10 transition-colors">
@@ -157,11 +157,11 @@ export function Home() {
           </div>
         </div>
 
-        {/* Health Tips CTA */}
-        <div className="rounded-2xl bg-gradient-to-r from-rose-500 to-pink-600 text-white p-10 text-center">
+        {/* Health Tips CTA — teal primary */}
+        <div className="rounded-2xl bg-gradient-to-r from-[#0c6e73] to-[#119197] text-white p-10 text-center">
           <h3 className="font-display font-extrabold text-2xl sm:text-3xl mb-2">Daily Health Tips</h3>
-          <p className="text-red-100 text-sm mb-6">Get personalized health tips and wellness advice to improve your daily life</p>
-          <Link to="/health-tips" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white text-red-600 font-semibold text-sm hover:bg-red-50 transition-colors">
+          <p className="text-teal-100 text-sm mb-6">Get personalized health tips and wellness advice to improve your daily life</p>
+          <Link to="/health-tips" className="inline-flex items-center gap-2 px-6 py-2.5 rounded-xl bg-white text-[#119197] font-semibold text-sm hover:bg-[#e6f7f7] transition-colors">
             Explore Health Tips
           </Link>
         </div>

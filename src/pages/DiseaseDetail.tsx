@@ -53,7 +53,7 @@ export function DiseaseDetail() {
               <IconArrowLeft size={15} /> Back to Library
             </Link>
             <span className="text-gray-300">|</span>
-            <span className="text-sm text-red-600 font-medium">{disease.category}</span>
+            <span className="text-sm text-[#119197] font-medium">{disease.category}</span>
           </div>
           <div className="flex items-center gap-2">
             <button className="p-2 rounded-lg hover:bg-gray-100 text-gray-500 transition-colors">
@@ -122,8 +122,8 @@ export function DiseaseDetail() {
                 onClick={() => setTab(t)}
                 className={`px-5 py-3.5 text-sm font-display font-semibold whitespace-nowrap transition-colors border-b-2 ${
                   tab === t
-                    ? 'border-red-600 text-red-600 bg-red-50'
-                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-gray-50'
+                    ? 'border-[#119197] text-[#119197] bg-[#e6f7f7]'
+                    : 'border-transparent text-gray-500 hover:text-gray-700 hover:bg-slate-50'
                 }`}
               >
                 {t}
@@ -134,14 +134,14 @@ export function DiseaseDetail() {
           <div className="p-6">
             {tab === 'Overview' && (
               <div>
-                <div className="flex items-center gap-2 text-red-600 mb-3">
+                <div className="flex items-center gap-2 text-[#119197] mb-3">
                   <IconBook size={16} />
                   <h3 className="font-display font-bold text-sm">What is {disease.name}?</h3>
                 </div>
                 <p className="text-gray-600 text-sm leading-relaxed mb-5">{disease.description}</p>
-                <div className="bg-red-50 border border-red-100 rounded-xl p-4">
-                  <p className="font-display font-semibold text-red-700 text-xs mb-1">Prevalence</p>
-                  <p className="text-red-600 text-sm">{disease.prevalence}</p>
+                <div className="bg-[#e6f7f7] border border-[#cceef0] rounded-xl p-4">
+                  <p className="font-display font-semibold text-[#0c6e73] text-xs mb-1">Prevalence</p>
+                  <p className="text-[#119197] text-sm">{disease.prevalence}</p>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-5 mt-6">
@@ -172,7 +172,7 @@ export function DiseaseDetail() {
               <ul className="space-y-3">
                 {disease.symptoms.map(s => (
                   <li key={s} className="flex items-center gap-3 p-3 bg-gray-50 rounded-xl text-sm text-gray-700">
-                    <span className="w-2 h-2 rounded-full bg-red-500 shrink-0" />{s}
+                    <span className="w-2 h-2 rounded-full bg-[#119197] shrink-0" />{s}
                   </li>
                 ))}
               </ul>
@@ -220,7 +220,7 @@ export function DiseaseDetail() {
         <div className="grid sm:grid-cols-2 gap-5">
           <div className="bg-white border border-gray-200 rounded-xl p-5">
             <p className="text-xs text-gray-500 mb-1">Need Medical Advice?</p>
-            <p className="font-display font-semibold text-red-600 text-sm mb-4">Connect with healthcare professionals</p>
+            <p className="font-display font-semibold text-[#119197] text-sm mb-4">Connect with healthcare professionals</p>
             <div className="space-y-2">
               <a href="tel:907" className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg bg-red-600 hover:bg-red-700 text-white text-sm font-bold transition-colors">
                 <IconPhone size={15} /> Find Emergency Services
@@ -232,7 +232,7 @@ export function DiseaseDetail() {
           </div>
           <div className="bg-white border border-gray-200 rounded-xl p-5">
             <p className="text-xs text-gray-500 mb-1">More Resources</p>
-            <p className="font-display font-semibold text-red-600 text-sm mb-4">Learn more about health conditions</p>
+            <p className="font-display font-semibold text-[#119197] text-sm mb-4">Learn more about health conditions</p>
             <div className="space-y-2">
               <Link to="/diseases" className="flex items-center justify-center gap-2 w-full py-2.5 rounded-lg border border-gray-200 hover:bg-gray-50 text-gray-700 text-sm font-semibold transition-colors">
                 <IconSearch size={15} /> Browse Disease Library
