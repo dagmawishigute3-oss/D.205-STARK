@@ -21,9 +21,9 @@ const VALUES = [
 
 const TEAM = [
   { name: 'Yonatan Muluken', role: 'Main & Co-founder', initials: 'Y', color: 'bg-[#119197]', desc: 'Project founder and team leader; designed the full website architecture, developed the complete platform, and initiated the core concept and technical direction of the project.' },
-  { name: 'Nahom Tebabu', role: 'Co-founder', initials: 'N', color: 'bg-[#119197]', desc: 'Manages medical data acquisition and verification. Compiled comprehensive disease information for the medical reference library.' },
-  { name: 'Dagmawi Tafari', role: 'Co-founder', initials: 'D', color: 'bg-[#119197]', desc: 'Conducts medical research and content organization. Ensures accuracy and accessibility of patient education materials.' },
-  { name: 'Ayub Ibrahim', role: 'Co-founder', initials: 'A', color: 'bg-[#119197]', desc: 'Oversees data quality assurance and medical content validation. Maintains information integrity across the platform.' },
+  { name: 'Nahom Tibebu', role: 'Co-founder', initials: 'N', color: 'bg-[#119197]', desc: 'Manages medical data acquisition and verification. Compiled comprehensive disease information for the medical reference library.' },
+  { name: 'Dagmawi Shigute', role: 'Co-founder', initials: 'D', color: 'bg-[#119197]', desc: 'Conducts medical research and content organization. Ensures accuracy and accessibility of patient education materials.' },
+  { name: 'Ayub Ebrahim', role: 'Co-founder', initials: 'A', color: 'bg-[#119197]', desc: 'Oversees data quality assurance and medical content validation. Maintains information integrity across the platform.' },
 ];
 
 export function About() {
